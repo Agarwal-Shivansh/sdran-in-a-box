@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: deploy-riab-with-ran-simulator-option
+      - name: deploy-riab-with-PCI-xAPP-option
         run: |
           echo "CPU_FAMILY:"
           lscpu | grep 'CPU family:'
@@ -22,4 +22,17 @@ jobs:
           make test-e2-subscription
           make test-kpimon
           make test-pci
+          make test-rnib
+      - name:  deploy-riab-with-MLB-xAPP-option
+        run: |
+          make test-e2-subscription
+          make test-kpimon
+          make test-pci
+          make test-mlb
+          make test-rnib
+      - name:  deploy-riab-with-MHO-xAPP-option
+        run: |
+          make test-e2-subscription
+          make test-kpimon
+          make test-mho
           make test-rnib
