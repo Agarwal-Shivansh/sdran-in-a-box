@@ -17,7 +17,7 @@ jobs:
           echo "CPU_Model:"
           lscpu | grep 'Model:'
           make riab OPT=ransim VER=stable
-      - name: test
+      - name: test-pci
         run: |
           make test-e2-subscription
           make test-kpimon
@@ -25,12 +25,18 @@ jobs:
           make test-rnib
       - name:  deploy-riab-with-MLB-xAPP-option
         run: |
+          make riab OPT=mlb VER=stable
+      - name: test-mlb
+        run: |
           make test-e2-subscription
           make test-kpimon
           make test-pci
           make test-mlb
           make test-rnib
       - name:  deploy-riab-with-MHO-xAPP-option
+        run: |
+          make riab OPT=mho VER=stable
+      - name: test-mho
         run: |
           make test-e2-subscription
           make test-kpimon
