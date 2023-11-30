@@ -11,11 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: deploy-riab-with-ran-simulator-option
-        env:
-          CPU_FAMILY: $(shell lscpu | grep 'CPU family:' | awk '{print $$3}')
         run: |
+          echo "CPU_FAMILY:"
+          lscpu
           make riab OPT=ransim VER=stable
-          echo "$CPU_FAMILY"
       - name: test
         run: |
           make test-e2-subscription
