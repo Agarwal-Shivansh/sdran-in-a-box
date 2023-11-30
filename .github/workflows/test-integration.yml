@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: deploy-riab-with-ran-simulator-option
         run: |
-          echo $(shell lscpu | grep 'CPU family:' | awk '{print $$3}')
+          echo "$(shell lscpu | grep 'CPU family:' | awk '{print $$3}')"
           make riab OPT=ransim VER=stable
       - name: test
         run: |
