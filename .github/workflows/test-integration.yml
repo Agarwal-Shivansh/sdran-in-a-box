@@ -11,7 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: uraimo/run-on-arch-action@v2
-      - name: deploy-riab-with-PCI-xAPP-option
+        name: deploy-riab-with-PCI-xAPP-option
+        id: runcmd
         with:
           arch: armv7
           run: |
