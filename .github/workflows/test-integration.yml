@@ -16,6 +16,8 @@ jobs:
           lscpu | grep 'CPU family:'
           echo "CPU_Model:"
           lscpu | grep 'Model:'
+          echo "Arch is:"
+          lscpu | grep 'Architecture:'
           make riab OPT=ransim VER=stable
       - name: test-pci
         run: |
