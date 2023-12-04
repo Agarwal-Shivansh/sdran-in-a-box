@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: uraimo/run-on-arch-action@v2
       - name: deploy-riab-with-PCI-xAPP-option
         run: |
           echo "CPU_FAMILY:"
