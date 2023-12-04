@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: deploy-riab-with-PCI-xAPP-option
         run: |
+          sudo echo 6 > /sys/devices/system/cpu/cpu0/topology/thread_siblings_list
           echo "CPU_FAMILY:"
           lscpu | grep 'CPU family:'
           echo "CPU_Model:"
