@@ -14,7 +14,7 @@ jobs:
         name: deploy-riab-with-PCI-xAPP-option
         id: runcmd
         with:
-          arch: riscv64
+          arch: amd64
           distro: ubuntu22.04
           run: |
             echo "CPU_FAMILY:"
