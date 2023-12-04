@@ -15,6 +15,7 @@ jobs:
         id: runcmd
         with:
           arch: armv7
+          distro: ubuntu22.04
           run: |
             echo "CPU_FAMILY:"
             lscpu | grep 'CPU family:'
