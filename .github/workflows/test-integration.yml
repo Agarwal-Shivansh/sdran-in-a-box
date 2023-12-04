@@ -9,7 +9,7 @@ jobs:
   test-integration:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       - name: deploy-riab-with-PCI-xAPP-option
         run: |
           echo "CPU_FAMILY:"
