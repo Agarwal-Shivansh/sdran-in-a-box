@@ -8,7 +8,7 @@ preliminaries: $(M) $(M)/system-check $(M)/setup
 
 $(M)/system-check: | $(M) $(M)/repos
 	@if [[ $(CPU_FAMILY) -eq 6 || $(CPU_FAMILY) -eq 25 ]]; then \
-		if [[ $(CPU_MODEL) -lt 60 ]]; then \
+		if [[ $(CPU_MODEL) -lt 60 && $(CPU_MODEL) -ne 1 ]]; then \
 			echo "FATAL: haswell CPU or newer is required."; \
 			exit 1; \
 		fi \
